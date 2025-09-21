@@ -1,0 +1,311 @@
+[
+  {
+    "name": "Gerhard Wenzel Tiefbauunternehmung GmbH & Co. KG",
+    "category": "Rohrleitungsbau",
+    "address": "Kleinmachnower Weg 13 -15, 14165 Berlin (Zehlendorf)",
+    "phone": "030 8 16 00 00"
+  },
+  {
+    "name": "Industriemontagen Hofmann e.K.",
+    "category": "Rohrleitungsbau",
+    "address": "Hinter der Schenke 5, 99958 Tonna (Burgtonna)",
+    "phone": "036042 7 94 25"
+  },
+  {
+    "name": "Amba-Erdbau GmbH",
+    "category": "Silber Partner",
+    "address": "Oraniendamm 68, 13469 Berlin (Waidmannslust)",
+    "phone": "030 40 53 64 73",
+    "badge": "Silber Partner"
+  },
+  {
+    "name": "Wilhelm Meyer GmbH & Co.KG",
+    "category": "Top Partner",
+    "address": "Am Gewerbering 20, 15374 Müncheberg",
+    "phone": "033432 83 90",
+    "badge": "Top Partner"
+  },
+  {
+    "name": "Grötzner GmbH",
+    "category": "First Class",
+    "address": "Sülbecksweg 57, 37574 Einbeck",
+    "phone": "05561 25 22"
+  },
+  {
+    "name": "HECKHOFF GMBH",
+    "category": "Silber Partner",
+    "address": "Bochumer Str. 7, 42279 Wuppertal (Barmen)",
+    "phone": "0202 2 60 46 30",
+    "badge": "Silber Partner"
+  },
+  {
+    "name": "Jürgen Nägele GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Marie-Curie-Str. 3, 71364 Winnenden (Hertmannsweiler)",
+    "phone": "07195 2 09 13 48"
+  },
+  {
+    "name": "Heine Brunnen- und Rohrleitungsbaugesellschaft mbH",
+    "category": "Silber Partner",
+    "address": "Gewerbestr. 5, 08412 Werdau (Langenhessen)",
+    "phone": "03761 35 87",
+    "badge": "Silber Partner"
+  },
+  {
+    "name": "EHI GmbH",
+    "category": "Business",
+    "address": "Lange Str. 21, 31832 Springe (Eldagsen)",
+    "phone": "05044 2 03"
+  },
+  {
+    "name": "HIT Heizwerks- und Industrietechnik GmbH",
+    "category": "Business",
+    "address": "Klosterwuhne 27, 39126 Magdeburg",
+    "phone": "0391 25 46 40"
+  },
+  {
+    "name": "Kölling GmbH",
+    "category": "Silber Partner",
+    "address": "Heidestr. 4A, 01561 Ebersbach (Bieberach)",
+    "phone": "035248 84 30",
+    "badge": "Silber Partner"
+  },
+  {
+    "name": "Kuntemeier GmbH",
+    "category": "Economy",
+    "address": "Osterweg 20, 32549 Bad Oeynhausen",
+    "phone": "05731 75 20 30"
+  },
+  {
+    "name": "Wilhelm Meyer GmbH & Co.KG",
+    "category": "Top Partner",
+    "address": "Fürstenwalder Poststr. 106, 15234 Frankfurt (Oder)",
+    "phone": "0335 40 07 02 93",
+    "badge": "Top Partner"
+  },
+  {
+    "name": "E. Diekmann GmbH",
+    "category": "Economy",
+    "address": "Berliner Str. 34, 38165 Lehre",
+    "phone": "05308 97 04-0"
+  },
+  {
+    "name": "GÜNTHER & SCHWARTZ Rohrleitungsbau GmbH",
+    "category": "Basic Partner",
+    "address": "Jüchtstr. 43, 53773 Hennef",
+    "phone": "02242 8 73 10 39",
+    "badge": "Basic Partner"
+  },
+  {
+    "name": "Hermann Lorenz Rohrleitungsbau GmbH",
+    "category": "Economy",
+    "address": "Stadtweg 12, 37141 Northeim",
+    "phone": "05551 33 39"
+  },
+  {
+    "name": "Hermann Lorenz Rohrleitungsbau GmbH",
+    "category": "Economy",
+    "address": "Stadtweg 12, 37141 Northeim",
+    "phone": "05551 33 39"
+  },
+  {
+    "name": "Kliewe house-tec GmbH",
+    "category": "Economy",
+    "address": "Temdestr. 8, 32756 Detmold",
+    "phone": "05231 3 08 23 95"
+  },
+  {
+    "name": "Weber Industrieller Rohrleitungsbau & Anlagenbau GmbH & Co. KG",
+    "category": "Basic Partner",
+    "address": "Dieselstr. 13, 50259 Pulheim",
+    "phone": "02238 96 50 10",
+    "badge": "Basic Partner"
+  },
+  {
+    "name": "Windel Ingenieurges. mbH",
+    "category": "Economy",
+    "address": "Werner-Nordmeyer-Str. 4, 31226 Peine (Kernstadt Süd)",
+    "phone": "05171 5 54 66"
+  },
+  {
+    "name": "Buck Tankanlagen GmbH",
+    "category": "Gold Partner",
+    "address": "Daloser Weg 5, 89134 Blaustein (Bermaringen)",
+    "phone": "07304 8 03 93-0",
+    "badge": "Gold Partner"
+  },
+  {
+    "name": "Pumpen-Wolf",
+    "address": "Holzlandstr. 13, 07629 Reichenbach",
+    "phone": "036601 92 00-0"
+  },
+  {
+    "name": "Landshammer GmbH Heizungsbau, Sanitärinstallationen",
+    "category": "Rohrleitungsbau",
+    "address": "Hansastr. 15, 80686 München (Sendling-Westpark)",
+    "phone": "089 88 14 40"
+  },
+  {
+    "name": "He-GAS GmbH",
+    "address": "Wilhelm-Conrad-Röntgen-Str. 5, 07629 Hermsdorf",
+    "phone": "036601 29 60-0"
+  },
+  {
+    "name": "Ruhdorfer Rohrleitungsbau GmbH",
+    "address": "Pentenrieder Str. 30, 82152 Krailling",
+    "phone": "089 8 56 15 44"
+  },
+  {
+    "name": "Haakshorst Rohrtechnik GmbH & Co KG",
+    "category": "Rohrleitungsbau",
+    "address": "Bünnerhelfstr. 10, 44379 Dortmund (Dorstfeld)",
+    "phone": "0231 96 43 05"
+  },
+  {
+    "name": "RRS Montan GmbH & Co. KG",
+    "category": "Rohrleitungsbau",
+    "address": "Weststr. 23B, 45891 Gelsenkirchen (Erle)",
+    "phone": "0163 8 88 85 08"
+  },
+  {
+    "name": "Kröger Anlagenbau GmbH",
+    "category": "Silber Partner",
+    "address": "Neubukower Str. 4, 18233 Carinerland-Moitin",
+    "phone": "038297 50 00",
+    "badge": "Silber Partner"
+  },
+  {
+    "name": "Furnier Michael GmbH",
+    "category": "Bronze- Partner",
+    "address": "Dorfstr. 7, 86316 Friedberg (Rohrbach)",
+    "phone": "08208 2 71",
+    "badge": "Bronze- Partner"
+  },
+  {
+    "name": "RGW - Rohrbau Glanz GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Sauerlacher Str. 5, 85649 Brunnthal (Hofolding)",
+    "phone": "08104 8 89 89 50"
+  },
+  {
+    "name": "Kolodzik Anlagenbau GmbH",
+    "category": "Bronze Partner",
+    "address": "Am Gnädigspark 11, 17309 Pasewalk",
+    "phone": "03973 20 85-0",
+    "badge": "Bronze Partner"
+  },
+  {
+    "name": "A.I.B. GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Wilhelm-Bitter-Platz 3, 45659 Recklinghausen (Hillerheide)",
+    "phone": "02361 30 36 00"
+  },
+  {
+    "name": "AMROS GmbH Montagen Rohrleitungsbau und Schweißtechnik",
+    "category": "Rohrleitungsbau",
+    "address": "Prinz-Regent-Str. 84, 44795 Bochum (Weitmar)",
+    "phone": "0234 3 38 65 80"
+  },
+  {
+    "name": "AÖ Bau GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Dammstr. 42, 44145 Dortmund (Lindenhorst)",
+    "phone": "0231 4 44 27 46 67"
+  },
+  {
+    "name": "APS-Technik Inh. Dipl.-Ing. Udo Barthel Rohrbau",
+    "category": "Rohrleitungsbau",
+    "address": "Ruhlsdorfer Str. 95, 14532 Stahnsdorf",
+    "phone": "03329 69 08 13"
+  },
+  {
+    "name": "ARKIL INPIPE GmbH Rohrleitungssanierung",
+    "category": "Rohrleitungsbau",
+    "address": "Rheinbabenstr. 75, 46240 Bottrop (Eigen)",
+    "phone": "02041 7 09 57-0"
+  },
+  {
+    "name": "AVIT GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Manderscheidtstr. 86, 45141 Essen (Frillendorf)",
+    "phone": "0201 2 94 90-0"
+  },
+  {
+    "name": "B & L Kabeltief- und Rohrleitungsbau GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Lehniner Str. 88, 14797 Kloster Lehnin (Damsdorf)",
+    "phone": "03382 7 07 84 20"
+  },
+  {
+    "name": "Bau- & Industrieservice Sassenhagen GbR",
+    "category": "Rohrleitungsbau",
+    "address": "Haßlower Chaussee 1, 16909 Wittstock/Dosse",
+    "phone": "03394 4 00 80 60"
+  },
+  {
+    "name": "Berkel Rohrtechnik GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Brüsseler Str. 67, 45968 Gladbeck (Brauck)",
+    "phone": "02043 4 01 17 78"
+  },
+  {
+    "name": "Berkel Rohrtechnik GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Franzstr. 25, 45968 Gladbeck (Brauck)",
+    "phone": "02043 4 01 16 91"
+  },
+  {
+    "name": "Berkenkamp u. Wüllner GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Schwanebecker Weg 1, 14641 Nauen",
+    "phone": "03321 74 43 26"
+  },
+  {
+    "name": "Burgdorf Rohrleitungs- und Tiefbau GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Märkische Str. 3, 16909 Wittstock",
+    "phone": "03394 47 82-0"
+  },
+  {
+    "name": "Buxkämper & Esser Rohrleitungsbau GmbH & Co. KG",
+    "category": "Rohrleitungsbau",
+    "address": "Rheinstr. 4, 44579 Castrop-Rauxel (Habinghorst)",
+    "phone": "02305 7 40 41"
+  },
+  {
+    "name": "DAR Apparate- und Rohrleitungsbau GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Düsseldorfer Landstr. 286, 47259 Duisburg (Huckingen)",
+    "phone": "0203 78 10 55"
+  },
+  {
+    "name": "Daume GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Drewitzer Str. 22A, 14478 Potsdam (Waldstadt I)",
+    "phone": "0331 81 71 69-0"
+  },
+  {
+    "name": "Diringer & Scheidel Rohrsanierung GmbH & Co. KG",
+    "category": "Rohrleitungsbau",
+    "address": "Kurzer Morgen 17, 58239 Schwerte (Geisecke)",
+    "phone": "02304 9 42 40-0"
+  },
+  {
+    "name": "DL-Pipelinebau GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Aldenrader Str. 9, 47169 Duisburg (Fahrn)",
+    "phone": "0162 3 27 05 83"
+  },
+  {
+    "name": "DL-Pipelinebau GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Aldenrader Str. 9, 47169 Duisburg (Fahrn)",
+    "phone": "0162 3 27 53 69"
+  },
+  {
+    "name": "DL-Pipelinebau GmbH",
+    "category": "Rohrleitungsbau",
+    "address": "Aldenrader Str. 9, 47169 Duisburg (Fahrn)",
+    "phone": "0162 3 28 15 29"
+  }
+]

@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+lxml
+spacy
+pytest
+tkinter; sys_platform == "win32" or sys_platform == "darwin"
