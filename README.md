@@ -132,7 +132,6 @@ Expected:
 - Documentation & packaging: ~2h  
 - **Total: ~8h**
 
-Most of the time was spent enhancing the solution with features such as the AI-based entity extraction (`ai_enhancer.py`), metrics tracking (`metrics.py`), and adding a simple GUI for usability.  
 For the final version, I leveraged tools such as **ChatGPT** and **GitHub Copilot** to improve code quality and documentation.
 
 ---
