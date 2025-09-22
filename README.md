@@ -21,13 +21,19 @@ It is a local Python tool that scrapes business listings from Gelbe Seiten (Germ
 
 ⚙️ **Setup**
 
+**Clone the repository:**
+```bash
+git clone https://github.com/HananAlHujaily/gelbe-seiten-scraper.git
+cd gelbe-seiten-scraper
+```
+
 Download and extract the project
 
-Unzip the folder you received (`3D-Padelt-Task.zip`).
+Unzip the folder you received (`gelbe-seiten-scraper.zip`).
 
 Open a terminal and navigate into the extracted folder:
 ```bash
-cd 3D-Padelt-Task
+cd gelbe-seiten-scraper
 ```
 
 Create a virtual environment (recommended):
