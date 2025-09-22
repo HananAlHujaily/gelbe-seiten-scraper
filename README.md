@@ -138,8 +138,6 @@ Expected:
 - Documentation & packaging: ~2h  
 - **Total: ~8h**
 
-For the final version, I leveraged tools such as **ChatGPT** and **GitHub Copilot** to improve code quality and documentation.
-
 ---
 
 🧠 **AI Systems Used**
