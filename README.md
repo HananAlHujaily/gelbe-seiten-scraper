@@ -142,8 +142,7 @@ Expected:
 
 🧠 **AI Systems Used**
 
-- **spaCy (de_core_news_sm):** Named Entity Recognition (company names)
-- **Regex:** German phone numbers & postal codes
+- Chatgpt and Github copilot 
 
 ---
 
