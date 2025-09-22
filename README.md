@@ -8,20 +8,29 @@ It is a local Python tool that scrapes business listings from Gelbe Seiten (Germ
 - **Input:** Profession / industry (e.g., IT, Plumber)
 - **Source:** Gelbe Seiten
 - **Output:** CSV and/or JSON (user selectable)
+- **Metrics:** Scraping metrics (query, pages, rows, timestamp) are saved as JSON in `results/metrics/`.
 
 **Key Features:**
 - **Discovery-first parsing:** Fields are saved in the order they appear on the website.
 - **AI fallback with spaCy + Regex:** If HTML structure is missing or changes, name, address, and phone are extracted from raw text.
-- **Portability:** Results are always saved in `results/` at the project root.
+- **Portability:** Results and metrics are always saved in `results/` at the project root.
 - **Multiple modes:** CLI, interactive input, or GUI.
+- **Metrics tracking:** Each scrape run saves a metrics file with details about the query and results.
 
 ---
 
 ⚙️ **Setup**
 
-Clone or download this project
+Download and extract the project
 
-Create a virtual environment:
+Unzip the folder you received (`3D-Padelt-Task.zip`).
+
+Open a terminal and navigate into the extracted folder:
+```bash
+cd 3D-Padelt-Task
+```
+
+Create a virtual environment (recommended):
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate   # On Windows: .venv\Scripts\activate
@@ -73,17 +82,29 @@ Results are saved in `results/`:
 results/
 ├── csv/
 │   └── it_20250920_101500.csv
-└── json/
+├── json/
+│   └── it_20250920_101500.json
+└── metrics/
     └── it_20250920_101500.json
 ```
 
-**Example JSON entry:**
+**Example JSON entry (business):**
 ```json
 {
   "name": "Bechtle GmbH IT-Systemhaus Köln",
   "address": "Schanzenstr. 41d, 51063 Köln",
   "phone": "0221 31 06 00",
   "website": "https://www.bechtle.com"
+}
+```
+
+**Example metrics file:**
+```json
+{
+  "query": "IT",
+  "pages": 2,
+  "rows": 20,
+  "timestamp": "20250920_101500"
 }
 ```
 
@@ -105,10 +126,15 @@ Expected:
 
 ⏱️ **Development Effort**
 
-- The core development was efficient because I previously completed similar projects during my university NLP course and my internship at KLAO.
-- Most of the time was spent enhancing the solution with features like the AI-based entity extraction (`ai_enhancer.py`).
-- For the final version, I leveraged tools such as ChatGPT and GitHub Copilot to improve code quality and documentation.
-- **Total time spent:** ~4h (including design, implementation, testing, and documentation)
+- Analysis & design: ~3h  
+- Implementation: ~3h  
+- Testing & debugging: ~2h  
+- Documentation & packaging: ~2h  
+- **Total: ~8h**
+
+Most of the time was spent enhancing the solution with features such as the AI-based entity extraction (`ai_enhancer.py`), metrics tracking (`metrics.py`), and adding a simple GUI for usability.  
+For the final version, I leveraged tools such as **ChatGPT** and **GitHub Copilot** to improve code quality and documentation.
+
 ---
 
 🧠 **AI Systems Used**
@@ -119,5 +145,3 @@ Expected:
 ---
 
 ⚠️ **Note:** This tool is for demonstration and testing purposes. Please respect the Gelbe Seiten terms of service when scraping.
-
-✅ This is a complete README that fulfills all

@@ -43,6 +43,9 @@
 - **ai_enhancer.py**  
   Provides AI-based entity extraction using spaCy and regex for robust fallback when HTML selectors fail.
 
+- **metrics.py**  
+  Utility for saving scraping metrics (query, pages, rows, timestamp) as JSON in `results/metrics/`.
+
 - **GUI (src/gui.py)**  
   Tkinter-based graphical interface for user-friendly scraping.
 
@@ -69,6 +72,9 @@
 5. **Output:**  
    Results are written to CSV and/or JSON in the `results/` directory.
 
+6. **Metrics Tracking:**  
+   After each scrape, metrics (query, pages, rows, timestamp) are saved via `metrics.py` in `results/metrics/`.
+
 ### Key Technologies
 
 - **Python 3.12**
@@ -78,6 +84,8 @@
 - **regex** – Phone/address extraction
 - **Tkinter** – GUI
 - **pytest** – Testing
+- **json, csv** – Output formats
+- **PyInstaller** – Packaging GUI as executable
 
 ### Design Decisions
 
@@ -93,11 +101,16 @@
 - **Docker support:**  
   Ensures reproducible environment and easy setup.
 
+- **Metrics tracking:**  
+  Each scrape run saves a metrics file for reproducibility and analysis.
+
 ### Extensibility
 
 - New output formats can be added easily.
 - Additional AI models or heuristics can be integrated in `ai_enhancer.py`.
 - GUI can be extended for more features.
+- Metrics logic can be extended for more detailed analytics.
+- Packaging can be customized via `gui.spec`.
 
 ---
 
@@ -109,21 +122,20 @@
 | DESIGN.md           | Architecture diagram, technical description|
 | src/scraper.py      | Main scraper logic                         |
 | src/ai_enhancer.py  | AI entity extraction                       |
+| src/metrics.py      | Metrics saving utility                     |
 | src/gui.py          | GUI interface                              |
 | requirements.txt    | Python dependencies                        |
 | Dockerfile          | Container setup                            |
+| gui.spec            | PyInstaller spec for GUI packaging         |
 | tests/              | Test scripts and cases                     |
 | data/sample_input/  | Example input queries                      |
-| results/            | Output files (CSV, JSON)                   |
+| results/            | Output files (CSV, JSON, metrics)          |
 
 ---
 
 ## Development Notes
 
 - **AI systems used:** spaCy, regex (see README)
+- **Metrics tracking:** See `metrics.py` for implementation details.
+- **Packaging:** See `gui.spec` for PyInstaller configuration.
 
----
-
-## Contact
-
-For questions or improvements, please contact the project

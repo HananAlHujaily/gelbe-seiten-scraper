@@ -23,7 +23,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from ai_enhancer import ai_extract_entities
-
+from metrics import save_metrics   # NEW: metrics integration
 
 # Base URL for Gelbe Seiten search
 BASE_URL = "https://www.gelbeseiten.de/suche/{}/"
@@ -38,13 +38,6 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; GelbeSeitenScraper/1.0)"}
 def scrape_page(query: str, page: int = 1) -> str | None:
     """
     Download a Gelbe Seiten search results page.
-
-    Args:
-        query (str): Search keyword (profession/industry).
-        page (int): Page number to fetch.
-
-    Returns:
-        str | None: Raw HTML content if successful, None otherwise.
     """
     url = BASE_URL.format(query) + f"?page={page}"
     try:
@@ -59,13 +52,7 @@ def scrape_page(query: str, page: int = 1) -> str | None:
 
 
 def _add_field_in_order(order_list: list, key: str):
-    """
-    Maintain a list of discovered field names in order.
-
-    Args:
-        order_list (list): Current global field order.
-        key (str): New key to add if not present.
-    """
+    """Add key to order_list if not present (preserve discovery order)."""
     if key not in order_list:
         order_list.append(key)
 
@@ -76,16 +63,6 @@ def _add_field_in_order(order_list: list, key: str):
 def parse_page_discovery(html: str, global_field_order: list) -> list[OrderedDict]:
     """
     Parse a Gelbe Seiten HTML page into structured OrderedDict rows.
-
-    Fields are recorded in the order they are discovered on the page.
-    Missing essentials (name, address, phone) are filled by AI fallback.
-
-    Args:
-        html (str): HTML content of a page.
-        global_field_order (list): Tracks discovery order across all pages.
-
-    Returns:
-        list[OrderedDict]: List of structured business entries.
     """
     try:
         soup = BeautifulSoup(html, "lxml")
@@ -101,30 +78,26 @@ def parse_page_discovery(html: str, global_field_order: list) -> list[OrderedDic
 
         # Name
         name_el = entry.find("h2")
-        name = name_el.get_text(strip=True) if name_el else None
-        if name:
-            row["name"] = name
+        if name_el:
+            row["name"] = name_el.get_text(strip=True)
             _add_field_in_order(global_field_order, "name")
 
         # Category
         category_el = entry.select_one("div.mod-Treffer__kategorie, div.mod-Treffer__branche, p")
-        category = category_el.get_text(strip=True) if category_el else None
-        if category:
-            row["category"] = category
+        if category_el:
+            row["category"] = category_el.get_text(strip=True)
             _add_field_in_order(global_field_order, "category")
 
         # Address
         address_el = entry.select_one("address.mod-AdresseKompakt, div.mod-AdresseKompakt__adress-text")
-        address = address_el.get_text(" ", strip=True) if address_el else None
-        if address:
-            row["address"] = address
+        if address_el:
+            row["address"] = address_el.get_text(" ", strip=True)
             _add_field_in_order(global_field_order, "address")
 
         # Phone
         phone_el = entry.select_one("a.mod-TelefonnummerKompakt__phoneNumber, a[href^='tel:']")
-        phone = phone_el.get_text(strip=True) if phone_el else None
-        if phone:
-            row["phone"] = phone
+        if phone_el:
+            row["phone"] = phone_el.get_text(strip=True)
             _add_field_in_order(global_field_order, "phone")
 
         # Website
@@ -136,7 +109,7 @@ def parse_page_discovery(html: str, global_field_order: list) -> list[OrderedDic
             site_a = entry.select_one("a[href^='http']")
             if site_a:
                 href = site_a.get("href")
-                if href and "gelbeseiten" not in href:  # avoid internal links
+                if href and "gelbeseiten" not in href:
                     website = href
         if website:
             row["website"] = website
@@ -147,20 +120,17 @@ def parse_page_discovery(html: str, global_field_order: list) -> list[OrderedDic
         if mail_el:
             email = mail_el.get("href")
             if email:
-                row["email"] = email
+                row["email"] = email.replace("mailto:", "")
                 _add_field_in_order(global_field_order, "email")
 
         # Badge
-        badge = None
         for t in entry.stripped_strings:
             if "Partner" in t or "PARTNER" in t:
-                badge = t
+                row["badge"] = t
+                _add_field_in_order(global_field_order, "badge")
                 break
-        if badge:
-            row["badge"] = badge
-            _add_field_in_order(global_field_order, "badge")
 
-        # AI fallback if key fields missing
+        # AI fallback if missing essentials
         if ("name" not in row) or ("address" not in row) or ("phone" not in row):
             ai = ai_extract_entities(raw_text)
             if ai.get("ai_name") and "name" not in row:
@@ -173,7 +143,7 @@ def parse_page_discovery(html: str, global_field_order: list) -> list[OrderedDic
                 row["phone"] = ai.get("ai_phone")
                 _add_field_in_order(global_field_order, "phone")
 
-        if row:  # Only add non-empty entries
+        if row:
             results.append(row)
 
     return results
@@ -185,17 +155,8 @@ def parse_page_discovery(html: str, global_field_order: list) -> list[OrderedDic
 def export_rows_discovery(rows: list[OrderedDict], query: str, out_dir: str,
                           formats: list[str], field_order: list):
     """
-    Save results to CSV and JSON.
-
-    Files are written to <project_root>/<out_dir>/csv and json.
-    Args:
-        rows: Extracted data rows.
-        query: Search keyword.
-        out_dir: Base output folder (relative to project root).
-        formats: Which formats to save ("csv", "json").
-        field_order: Column order based on discovery.
+    Save results to CSV and JSON under results/csv and results/json.
     """
-    # Ensure output is relative to project root, not src/
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     out_dir = os.path.join(project_root, out_dir)
 
@@ -206,12 +167,9 @@ def export_rows_discovery(rows: list[OrderedDict], query: str, out_dir: str,
     stem = query.replace(" ", "_").lower() + "_" + ts
     paths = {}
 
-    # Decide header order
+    # Column order
     if not field_order:
-        if rows:
-            field_order = list(rows[0].keys())
-        else:
-            field_order = []
+        field_order = list(rows[0].keys()) if rows else []
 
     all_keys = list(field_order)
     for r in rows:
@@ -224,8 +182,7 @@ def export_rows_discovery(rows: list[OrderedDict], query: str, out_dir: str,
         with open(csv_path, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=all_keys)
             writer.writeheader()
-            for r in rows:
-                writer.writerow(r)
+            writer.writerows(rows)
         paths["csv"] = csv_path
 
     if "json" in formats:
@@ -242,15 +199,7 @@ def export_rows_discovery(rows: list[OrderedDict], query: str, out_dir: str,
 # -----------------------------------------------------------------------------
 def run_discovery(query: str, pages: int = 1, out_dir: str = "results",
                   formats: list[str] | None = None):
-    """
-    Run scraping for multiple pages.
-
-    Args:
-        query (str): Profession/industry keyword.
-        pages (int): How many result pages to scrape.
-        out_dir (str): Base output folder (relative to project root).
-        formats (list[str] | None): Output formats.
-    """
+    """Run scraping for multiple pages."""
     if formats is None:
         formats = ["csv", "json"]
 
@@ -265,20 +214,20 @@ def run_discovery(query: str, pages: int = 1, out_dir: str = "results",
         all_rows.extend(page_rows)
         time.sleep(1.0)  # polite delay
 
-    return export_rows_discovery(all_rows, query, out_dir, formats, global_field_order)
+    # Export CSV/JSON
+    export_paths = export_rows_discovery(all_rows, query, out_dir, formats, global_field_order)
+
+    # Save metrics
+    metrics_path = save_metrics(query, pages, len(all_rows), out_dir)
+    print(f" - METRICS: {metrics_path}")
+
+    return export_paths
 
 
 # -----------------------------------------------------------------------------
 # CLI
 # -----------------------------------------------------------------------------
 def main():
-    """
-    Command-line interface.
-    Run with:
-        python src/scraper.py IT --pages 2
-    Or interactively:
-        python src/scraper.py
-    """
     print("🔎 Welcome to the GelbeSeiten AI Scraper (Discovery mode)")
 
     parser = argparse.ArgumentParser(description="Scrape Gelbe Seiten for a given profession/industry.")
