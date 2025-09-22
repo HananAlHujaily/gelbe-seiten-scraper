@@ -1,6 +1,6 @@
 # GelbeSeiten AI Scraper
 
-This project was developed as part of the 3D Padelt GmbH test assignment.  
+
 It is a local Python tool that scrapes business listings from Gelbe Seiten (German Yellow Pages) for a given profession or industry (e.g., IT, Plumber, Electrician) and saves them as structured data.
 
 📌 **Project Overview**
