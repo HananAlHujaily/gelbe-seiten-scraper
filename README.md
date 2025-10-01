@@ -130,20 +130,4 @@ Expected:
 
 ---
 
-⏱️ **Development Effort**
-
-- Analysis & design: ~3h  
-- Implementation: ~3h  
-- Testing & debugging: ~2h  
-- Documentation & packaging: ~2h  
-- **Total: ~8h**
-
----
-
-🧠 **AI Systems Used**
-
-- Chatgpt and Github copilot 
-
----
-
 ⚠️ **Note:** This tool is for demonstration and testing purposes. Please respect the Gelbe Seiten terms of service when scraping.
